@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path;
-from pizzaorder.views import *;
+from pizzaorder import views;
 
 urlpatterns = [
     path("list/api/",views.ListOrderApi.as_view(),name="pizza_order"),
