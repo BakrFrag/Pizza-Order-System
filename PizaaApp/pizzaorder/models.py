@@ -1,6 +1,5 @@
 from django.db import models
-
-
+from django.core.validators import MinValueValidator,MaxValueValidator;
 pizza_sizes=(
     ("l","Large"),
     ("m","Medium"),

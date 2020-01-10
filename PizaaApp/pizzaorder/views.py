@@ -14,19 +14,19 @@ class CreteOrderApi(generics.CreateAPIView):
     permission_class=[];
 class RetriveOrderApi(generics.RetrieveAPIView):
     model=Order;
-    qs=Order.objects.all();
+    queryset=Order.objects.all();
     serializer_class=RetriveOrderSerializer
     permission_class=[];
     lookup_field='pk';
 class UpdateOrderApi(generics.UpdateAPIView):
     model=Order;
-    qs=Order.objects.all();
+    queryset=Order.objects.all();
     serializer_class=CreateOrderSerializer
     permission_class=[];
     lookup_field='pk';
 class DeleteOrderApi(generics.DestroyAPIView):
     model=Order;
-    qs=Order.objects.all();
+    queryset=Order.objects.all();
     permission_class=[];
     lookup_field='pk';
     serializer_class=RetriveOrderSerializer
