@@ -18,13 +18,13 @@ class RetriveOrderApi(generics.RetrieveAPIView):
     serializer_class=RetriveOrderSerializer
     permission_class=[];
     lookup_field='pk';
-class UpdateOrderApi(generics.UpdateAPIView):
+class UpdateOrderApi(generics.RetrieveUpdateAPIView):
     model=Order;
     queryset=Order.objects.all();
     serializer_class=CreateOrderSerializer
     permission_class=[];
     lookup_field='pk';
-class DeleteOrderApi(generics.DestroyAPIView):
+class DeleteOrderApi(generics.RetrieveDestroyAPIView):
     model=Order;
     queryset=Order.objects.all();
     permission_class=[];
