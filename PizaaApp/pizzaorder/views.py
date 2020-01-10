@@ -6,7 +6,7 @@ from rest_framework import generics;
 class ListOrderApi(generics.ListAPIView):
     model=Order;
     qs=Order.objects.all();
-    serializer_class=ListOrderSerializer;
+    serializer_class=RetriveOrderSerializer
     permission_class=[];
 class CreteOrderApi(generics.CreateAPIView):
     Model=Order;
@@ -15,7 +15,7 @@ class CreteOrderApi(generics.CreateAPIView):
 class RetriveOrderApi(generics.RetrieveAPIView):
     model=Order;
     qs=Order.objects.all();
-    serializer_class=CreateOrderSerializer
+    serializer_class=RetriveOrderSerializer
     permission_class=[];
     lookup_field='pk';
 class UpdateOrderApi(generics.UpdateAPIView):
@@ -29,5 +29,5 @@ class DeleteOrderApi(generics.DestroyAPIView):
     qs=Order.objects.all();
     permission_class=[];
     lookup_field='pk';
-    serializer_class=CreateOrderSerializer
+    serializer_class=RetriveOrderSerializer
 
