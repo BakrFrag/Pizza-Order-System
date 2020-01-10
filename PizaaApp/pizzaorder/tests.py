@@ -1,11 +1,20 @@
-from django.test import TestCase, Client;
+from django.test import TestCase;
 from django.urls import reverse;
+from rest_framework.test import APIClient
 # Create your tests here.
-from pizzaorder import Order;
-class TestListApi(TestCase):
-    def setup(self):
-        self.client=Client();
-        self.response=client.get(reverse("pizza_orders"));
-    def Test_List(self):
+from .models import Order;
+# test list order views Get Repuest
+class TestListOrderApi(TestCase):
+    def test_List(self):
+        client=APIClient();
+        response=client.get(reverse("pizza_orders"),format='json');
         self.assertEqual(response.status_code,200);
 
+# test create order Post Request
+
+class TestCreateOrderApi(TestCase):
+    def test_create(self):
+        client=APIClient();
+        response=client.post(reverse('create_order'),{"customer_name":"Bk Test","customer_address":"Menofia","customer_phone":"01092276430"});
+        self.assertEqual(response.status_code,400);
+    
