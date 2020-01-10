@@ -16,7 +16,7 @@ order_status=(
     ("shipped","Shipped Number"),
     ("in_progress","In Prigress"),
     ("canceled","Canceled"),
-    ("Delivered","delivered")
+    ("delivered","delivered")
         );
 # Create your models here.
 class Order(models.Model):
