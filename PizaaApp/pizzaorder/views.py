@@ -5,7 +5,7 @@ from rest_framework import generics;
 # Create your views here.
 class ListOrderApi(generics.ListAPIView):
     model=Order;
-    qs=Order.objects.all();
+    queryset=Order.objects.all();
     serializer_class=RetriveOrderSerializer
     permission_class=[];
 class CreteOrderApi(generics.CreateAPIView):
