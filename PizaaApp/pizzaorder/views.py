@@ -15,11 +15,13 @@ class CreteOrderApi(generics.CreateAPIView):
 class RetriveOrderApi(generics.RetrieveAPIView):
     model=Order;
     qs=Order.objects.all();
+    serializer_class=CreateOrderSerializer
     permission_class=[];
     lookup_field='pk';
 class UpdateOrderApi(generics.UpdateAPIView):
     model=Order;
     qs=Order.objects.all();
+    serializer_class=CreateOrderSerializer
     permission_class=[];
     lookup_field='pk';
 class DeleteOrderApi(generics.DestroyAPIView):
@@ -27,4 +29,5 @@ class DeleteOrderApi(generics.DestroyAPIView):
     qs=Order.objects.all();
     permission_class=[];
     lookup_field='pk';
+    serializer_class=CreateOrderSerializer
 
