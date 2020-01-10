@@ -6,9 +6,24 @@ from rest_framework.exceptions import APIException;
 # Create your views here.
 class ListOrderApi(generics.ListAPIView):
     model=Order;
-    queryset=Order.objects.all();
+    #queryset=Order.objects.all();
     serializer_class=RetriveOrderSerializer
-    permission_class=[];
+    permission_classes=[];
+    def get_queryset(self):
+        filter_status=self.request.GET.get('status',None);
+        filter_customer=self.request.GET.get('customer',None);
+        if filter_status is not None and filter_customer is not None:
+            queryset=Order.objects.filter(status__icontains=filter_status,customer_name__icontains=filter_customer).order_by("-created");
+            return queryset;
+        elif filter_status is not None:
+            queryset=Order.objects.filter(status__icontains=filter_status).order_by("-created");
+            return queryset;
+        elif filter_customer is not None:
+            queryset=Order.objects.filter(customer_name__icontains=filter_customer).order_by('-created');
+            return queryset;
+        else:
+            queryset=Order.objects.all().order_by("-created");
+            return queryset;
 class CreteOrderApi(generics.CreateAPIView):
     Model=Order;
     serializer_class=CreateOrderSerializer;

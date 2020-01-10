@@ -14,9 +14,9 @@ pizza_types=(
     ("chesse","Chesse"));
 order_status=(
     ("shipped","Shipped Number"),
-    ("in_progress","In Prigress"),
+    ("in_progress","In Progress"),
     ("canceled","Canceled"),
-    ("delivered","delivered")
+    ("delivered","Delivered")
         );
 # Create your models here.
 class Order(models.Model):
