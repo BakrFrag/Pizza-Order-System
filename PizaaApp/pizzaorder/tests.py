@@ -5,6 +5,7 @@ from rest_framework.test import APIClient
 from .models import Order;
 # test list order views Get Repuest
 
+# Test View:ListOrderApi With API ClientGet Get Request 
 class TestListOrderApi(TestCase):
     def test_List(self):
         client=APIClient();
@@ -13,6 +14,7 @@ class TestListOrderApi(TestCase):
 
 # test create order Post Request
 
+# Test View:CreteOrderApi  With APIClient Post Request
 class TestCreateOrderApi(TestCase):
     def test_create(self):
         client=APIClient();
@@ -21,9 +23,13 @@ class TestCreateOrderApi(TestCase):
 
 #test delete item not exist Delete Request
 
+# Test View:DeleteOrderApi With Client Delete Request
 class TestDestoryOrderApi(TestCase):
     def test_delete(self):
         client=APIClient();
+
+        # chosse id of order that not found on database
+        
         response=client.delete(reverse("delete_order",
         kwargs={"pk":5000}));
         self.assertEqual(response.status_code,404);
