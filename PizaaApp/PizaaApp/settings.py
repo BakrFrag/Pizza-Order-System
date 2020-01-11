@@ -71,6 +71,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pizza',
+        'HOST':'localhost',
         'USER':'postgres',
         'PASSWORD':'147258369',
         'PORT':5432
