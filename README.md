@@ -98,6 +98,7 @@ http://127.0.0.1:8000/pizza/list/api/
 You Will Find List Of All Orders
 
 # Project Urls Api End Points
+>**these endpoints tested and works fine and behave as expected**
 
 1. List All Order Url Get Request 
 ```
@@ -135,6 +136,7 @@ http://127.0.01:8000/pizza/order/<int:pk>/
 
 # Test On Project
 
+>**These tests tested and works fine**
 >There Is 3 Test On tests.py File To Run Them Type 
 
 >Please Read Comments  On tests.py before run it
